@@ -1,4 +1,4 @@
 function doesjestwork() {
-    return `no`
+    return `yes`
   }
-  module.exports = sum;
+  module.exports = doesjestwork;
