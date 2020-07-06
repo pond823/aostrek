@@ -1,0 +1,14 @@
+{
+  "name": "aostrek",
+  "version": "1.0.0",
+  "description": "Command line Age Of Sigmar simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Sasha Bilton",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^26.1.0"
+  }
+}
