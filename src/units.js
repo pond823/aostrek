@@ -5,7 +5,7 @@ units = [
         faction : "Slaves To The Darkness", 
         units : [
             {
-                name : "Chaos Maruaders",
+                name : "Chaos Marauders",
                 type : "Infantry",
                 base_size : 20
             },
@@ -55,7 +55,7 @@ units = [
     }
 
 ]
-function display_unit_names() {
+function displayUnitNames() {
     i =0
     units.forEach(factions => {
         console.log(chalk.blue(factions.faction))
@@ -67,5 +67,22 @@ function display_unit_names() {
     );
 }
 
+function getUnitByIndex(index) {
+    i =0
+    unitFound={}
+    units.forEach(factions => {
+        console.log(chalk.blue(factions.faction))
+        factions.units.forEach(unit => {
+            i++
+            if (index == i) {
+                unitFound=unit
+            }     
+        });
+        }
+    );
+    return unitFound
+}
 
-module.exports={units, display_unit_names}
+
+
+module.exports={units, displayUnitNames, getUnitByIndex}
