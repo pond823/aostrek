@@ -12,11 +12,11 @@ function hit(attacks, attack, dice) {
     return hits
 }
 
-function wound(hits, unit, dice) {
+function wound(hits, attack, dice) {
     wounds = 0
 
     for (i=0; i<hits; i++) {
-        if (dice[i]>=unit.ws ) {
+        if (dice[i]>=attack.toWound ) {
             wounds++
         }
 
