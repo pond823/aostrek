@@ -24,4 +24,16 @@ function wound(hits, attack, dice) {
     return wounds
 }
 
-module.exports = {hit, wound}
+function fight(inCombat, unit, dice) {
+    wounds =0
+    unit.attacks.forEach(attack => {
+        hits = hit(inCombat, attack, dice )
+        wounds+= wound(hits, attack, dice ) 
+    }); 
+    
+    return wounds;
+
+
+}
+
+module.exports = {hit, wound, fight}
