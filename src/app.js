@@ -1,21 +1,24 @@
 const chalk = require('chalk')
 const units = require('./units')
+const clone = require('clone')
 
-const readline = require("readline");
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const rl = require("readline-sync");
+
 
 console.log(chalk.red("Age Of Sigmar Battle Simulator"))
 
-units.displayUnitNames();
+units.displayUnitNames()
 
-rl.question("Select a unit? ", function(index) {
-    console.log(units.getUnitByIndex(index))
-})
+var unitA, uniB
 
-rl.on("close", function() {
-    console.log("\nBYE BYE !!!");
-    process.exit(0);
-});
+
+index = rl.question(`Select 1st unit`)
+unitA = units.getUnitByIndex(index)
+index = rl.question(`Select 2nd unit`)
+unitB = units.getUnitByIndex(index)
+
+console.log(unitA)
+console.log(unitB)
+
+
+

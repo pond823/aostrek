@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
-    "jest": "^26.1.0"
+    "clone": "^2.1.2",
+    "jest": "^26.1.0",
+    "readline-sync": "^1.4.10"
   }
 }
