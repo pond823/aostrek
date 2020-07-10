@@ -8,6 +8,8 @@ units = [
                 name : "Chaos Marauders with Barbarian Axes",
                 type : "Infantry",
                 baseSize : 20,
+                wounds : 1,
+                save : 6,
                 attacks : [
                     {
                         weapon : "Barbarian Axe",
@@ -25,6 +27,8 @@ units = [
                 name : "Chaos Warriors with Chaos Hand Weapon",
                 type : "Infantry",
                 baseSize : 5,
+                wounds : 2,
+                save : 4,
                 attacks : [
                     {
                         weapon : "Chaos Hand Weapon",
@@ -42,6 +46,8 @@ units = [
                 name : "Chaos Knights with Ensorcelled Weapon",
                 type : "Cavalry",
                 baseSize : 5,
+                wounds : 3,
+                save : 4,
                 attacks : [
                     {
                         weapon : "Ensorcelled Weapon",
@@ -58,6 +64,8 @@ units = [
             {
                 name : "Chaos Lord with Reaperblade and Daemonbound Steel",
                 type : "Infantry",
+                wounds : 7,
+                save : 4,
                 baseSize : 1,
                 attacks : [
                     {
@@ -117,6 +125,8 @@ units = [
                 name : "Saurus Warriors",
                 type : "Infantry",
                 baseSize : 10,
+                wounds : 1,
+                save : 4,
                 attacks : [
                     {
                         weapon : "Celestite Club",
