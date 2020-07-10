@@ -5,55 +5,111 @@ units = [
         faction : "Slaves To The Darkness", 
         units : [
             {
-                name : "Chaos Marauders",
+                name : "Chaos Marauders with Barbarian Axes",
                 type : "Infantry",
                 baseSize : 20,
+                attacks : [
+                    {
+                        weapon : "Barbarian Axe",
+                        Range : 1,
+                        attacks : 2,
+                        toHit : 4,
+                        toWound : 4,
+                        rend : 0,
+                        damage : 1
+                    }
+      
+                ]
             },
             {
-                name : "Chaos Warriors",
+                name : "Chaos Warriors with Chaos Hand Weapon",
                 type : "Infantry",
-                baseSize : 5
+                baseSize : 5,
+                attacks : [
+                    {
+                        weapon : "Chaos Hand Weapon",
+                        Range : 1,
+                        attacks : 2,
+                        toHit : 3,
+                        toWound : 3,
+                        rend : 0,
+                        damage : 1
+                    }
+      
+                ]
             },
             {
-                name : "Chaos Knights",
+                name : "Chaos Knights with Ensorcelled Weapon",
                 type : "Cavalry",
-                baseSize : 5
+                baseSize : 5,
+                attacks : [
+                    {
+                        weapon : "Ensorcelled Weapon",
+                        Range : 1,
+                        attacks : 3,
+                        toHit : 3,
+                        toWound : 3,
+                        rend : 1,
+                        damage : 1
+                    }
+      
+                ]
             },
             {
-                name : "Chaos Lord",
+                name : "Chaos Lord with Reaperblade and Daemonbound Steel",
                 type : "Infantry",
-                baseSize : 1
+                baseSize : 1,
+                attacks : [
+                    {
+                        weapon : "Reaperblade",
+                        Range : 2,
+                        attacks : 3,
+                        toHit : 3,
+                        toWound : 3,
+                        rend : 2,
+                        damage : 2
+                    },
+                    {
+                        weapon : "Daemonbound Steelblade",
+                        Range : 1,
+                        attacks : 3,
+                        toHit : 3,
+                        toWound : 3,
+                        rend : 2,
+                        damage : 1
+                    }
+                ]
             }
 
         ]
     }, 
-    {
-        faction : "Gloomspite Gits", 
-        units : [
-            {
-                name : "Stabbas",
-                type : "Infantry",
-                baseSize : 20,
+    // {
+    //     faction : "Gloomspite Gits", 
+    //     units : [
+    //         {
+    //             name : "Stabbas",
+    //             type : "Infantry",
+    //             baseSize : 20,
   
-            },
-            {
-                name : "Squid Riders",
-                type : "Infantry",
-                baseSize : 5
-            },
-            {
-                name : "Troggoth",
-                type : "Cavalry",
-                baseSize : 5
-            },
-            {
-                name : "Gloomspite Gitlord",
-                type : "Infantry",
-                baseSize : 1
-            }
+    //         },
+    //         {
+    //             name : "Squid Riders",
+    //             type : "Infantry",
+    //             baseSize : 5
+    //         },
+    //         {
+    //             name : "Troggoth",
+    //             type : "Cavalry",
+    //             baseSize : 5
+    //         },
+    //         {
+    //             name : "Gloomspite Gitlord",
+    //             type : "Infantry",
+    //             baseSize : 1
+    //         }
 
-        ]
-    },
+    //     ]
+    // },
     {
         faction : "Seraphon", 
         units : [
