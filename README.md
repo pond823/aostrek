@@ -4,4 +4,7 @@ Pocket calculator for AoS battles, very much a work in progress. Started as a wa
 
 You'll need Node.js - https://nodejs.org/ and the aostrek code from here
 
-node src/app.js should run it
+Run `npm init` once
+ 
+And then to run the app use  
+  `node src/app.js`
