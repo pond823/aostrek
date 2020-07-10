@@ -23,6 +23,8 @@ test('a unit of Saurus Warriors total wounds inflicted count rolling just 6s is 
 
     dice = [6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]
     warriors = units.getUnitByName(`Saurus Warriors`)
-    wounds = simpleFight.fight(warriors.baseSize, warriors, dice)
-    expect(wounds).toBe(20)
+    result = simpleFight.fight(warriors.baseSize, warriors, dice)
+    expect(result[0].thatWounded).toBe(10)
+    expect(result[1].thatWounded).toBe(10)
+    
 })

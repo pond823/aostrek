@@ -1,7 +1,7 @@
 const units = require("./units")
 
 function hit(attacks, attack, dice) {
-    hits = 0
+    hits = []
 
     for (i=0; i<attacks; i++) {
         if (dice[i]>=attack.toHit ) {
@@ -25,13 +25,22 @@ function wound(hits, attack, dice) {
 }
 
 function fight(inCombat, unit, dice) {
-    wounds =0
+    results = []
     unit.attacks.forEach(attack => {
+        
         hits = hit(inCombat, attack, dice )
-        wounds+= wound(hits, attack, dice ) 
+        wounds = wound(hits, attack, dice ) 
+        result = {
+            name : attack.weapon,
+            thatHit : hits,
+            thatWounded : wounds,
+            damage : attack.damage,
+            rend : attack.rend
+        }
+        results.push(result)
+
     }); 
-    
-    return wounds;
+    return results;
 
 
 }

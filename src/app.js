@@ -19,9 +19,12 @@ unitA = units.getUnitByIndex(index)
 //unitB = units.getUnitByIndex(index)
 
 dice = diceBag(100) 
-wounds = simpleFight.fight(unitA.baseSize, unitA, dice)
+results = simpleFight.fight(unitA.baseSize, unitA, dice)
 
-console.log(chalk.red(unitA.name+" inflicts "+wounds+" wounds"))
+console.log(chalk.red(unitA.name+" scores "))
+results.forEach(result => {
+    console.log("  "+result.name +" hits "+result.thatHit+" times and wounds "+result.thatWounded+" times, each doing "+result.damage+" damage at rend -"+result.rend)
+});
 
 
 
