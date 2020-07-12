@@ -1,35 +1,37 @@
 const units = require("./units")
 
 function hit(attacks, attack, dice) {
-    var hits = []
-
+    var hits = {result :0}
+    hits.dice =[]
     for (i=0; i<attacks; i++) {
+        hits.dice.push(dice[i])
         if (dice[i]>=attack.toHit ) {
-            hits++
+            hits.result++
         }
-
     }
     return hits
 }
 
 function wound(hits, attack, dice) {
-    wounds = 0
-
+    var wounds = {result : 0}
+    wounds.dice =[]
     for (i=0; i<hits; i++) {
+       wounds.dice.push(dice[i])
         if (dice[i]>=attack.toWound ) {
-            wounds++
+            wounds.result++
         }
 
     }
+
     return wounds
 }
 
 function fight(inCombat, unit, dice) {
     var results = []
     unit.attacks.forEach(attack => {
-        
-        hits = hit(inCombat, attack, dice )
-        wounds = wound(hits, attack, dice ) 
+  
+        var hits = hit(attack.attacks * inCombat, attack, dice )
+        var wounds = wound(hits.result, attack, dice ) 
         var result = {
             name : attack.weapon,
             thatHit : hits,
@@ -43,22 +45,25 @@ function fight(inCombat, unit, dice) {
     return results;
 }
 
-function save(baseSize, unit, wounds, damage, dice) {
+function save(baseSize, unit, wounds, damage, rend, dice) {
     var result = {died: 0}
-    fails =0
+    var fails =0
+    result.dice=[]
+    
     for (i=0 ; i< wounds ; i++) {
-        if (dice[i]<unit.save) {
+        result.dice.push(dice[i])
+        if (dice[i]<(unit.save+rend)) {
             fails++
         }
     }
-    console.log("fails "+fails)
-    totalDamage = fails * damage
-    console.log("td "+totalDamage)
+
+    var totalDamage = fails * damage
     if (totalDamage> 0) {
         result.died = Math.floor(totalDamage / unit.wounds)
         if (result.died > baseSize) {
             result.died = baseSize
         }
+        result.wounds = totalDamage % unit.wounds
     }
     return result
 }
